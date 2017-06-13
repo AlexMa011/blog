@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+  <url>
+    <loc>https://alexma011.github.io/myblog.github.io/myblog.github.io/2017/06/12/pytorch1/</loc>
+    <lastmod>2017-06-12T08:46:15.000Z</lastmod>
+    <data>
+        <display>
+        <title>pytorch演练1:自制数据集的多标签训练</title>
+        <pubTime>2017-06-12T08:38:01.000Z</pubTime>
+        
+        <tag>pytorch</tag>
+         
+        <tag>deep learning</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>https://alexma011.github.io/myblog.github.io/myblog.github.io/2017/06/12/hello-world/</loc>
+    <lastmod>2017-06-12T07:24:42.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2017-06-12T07:24:42.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>

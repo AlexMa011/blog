@@ -5,7 +5,7 @@
   <link href="/myblog.github.io/atom.xml" rel="self"/>
   
   <link href="https://alexma011.github.io/myblog.github.io/"/>
-  <updated>2017-06-12T07:24:42.000Z</updated>
+  <updated>2017-06-12T08:46:15.000Z</updated>
   <id>https://alexma011.github.io/myblog.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pytorch演练1:自制数据集的多标签训练</title>
+    <link href="https://alexma011.github.io/myblog.github.io/2017/06/12/pytorch1/"/>
+    <id>https://alexma011.github.io/myblog.github.io/2017/06/12/pytorch1/</id>
+    <published>2017-06-12T08:38:01.000Z</published>
+    <updated>2017-06-12T08:46:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="制作自己的数据集"><a href="#制作自己的数据集" class="headerlink" title="制作自己的数据集"></a>制作自己的数据集</h4><p>pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹<code>/data</code>，然后在其下建立两个文件夹一个<code>/train</code>，一个<code>/val</code>。这两个文件夹中分别给每一类建立一个新的文件夹，例如<code>/train/cat</code>、<code>/train/dog</code>、<code>/val/cat</code>、<code>/val/dog</code>等等。然后利用pytorch的</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;制作自己的数据集&quot;&gt;&lt;a href=&quot;#制作自己的数据集&quot; class=&quot;headerlink&quot; title=&quot;制作自己的数据集&quot;&gt;&lt;/a&gt;制作自己的数据集&lt;/h4&gt;&lt;p&gt;pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹&lt;code&gt;/dat
+    
+    </summary>
+    
+    
+      <category term="pytorch" scheme="https://alexma011.github.io/myblog.github.io/tags/pytorch/"/>
+    
+      <category term="deep learning" scheme="https://alexma011.github.io/myblog.github.io/tags/deep-learning/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
