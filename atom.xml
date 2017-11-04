@@ -5,7 +5,7 @@
   <link href="/myblog.github.io/atom.xml" rel="self"/>
   
   <link href="https://alexma011.github.io/myblog.github.io/"/>
-  <updated>2017-11-04T03:03:42.256Z</updated>
+  <updated>2017-11-04T03:06:32.195Z</updated>
   <id>https://alexma011.github.io/myblog.github.io/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="https://alexma011.github.io/myblog.github.io/2017/10/08/%E4%B8%8B%E8%BD%BD%E7%BD%91%E9%A1%B5%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87/"/>
     <id>https://alexma011.github.io/myblog.github.io/2017/10/08/下载网页中的图片/</id>
     <published>2017-10-08T09:32:59.000Z</published>
-    <updated>2017-11-04T03:03:42.256Z</updated>
+    <updated>2017-11-04T03:06:32.195Z</updated>
     
     <content type="html"><![CDATA[<p>今天从wordpress搬运网站，发现wordpress里面的图片不提供批量下载，所以就自己写了个从html中直接下载一些图片的python小脚本：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> wget</div><div class="line"></div><div class="line">f = open(<span class="string">'example.html'</span>)</div><div class="line">lines = f.readlines()</div><div class="line">p = re.compile(<span class="string">'img.+?src="(http.+?)"'</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</div><div class="line">	imgs = p.findall(line)</div><div class="line">	<span class="keyword">if</span>(len(imgs)!=<span class="number">0</span>):</div><div class="line">      	<span class="keyword">for</span> image <span class="keyword">in</span> imgs:</div><div class="line">    		filename = wget.download(image)</div><div class="line">    print(imgs)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> wget</div><div class="line"></div><div class="line">f = open(<span class="string">'example.html'</span>)</div><div class="line">lines = f.readlines()</div><div class="line">p = re.compile(<span class="string">'img.+?src="(http.+?)"'</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</div><div class="line">	imgs = p.findall(line)</div><div class="line">	<span class="keyword">if</span>(len(imgs)!=<span class="number">0</span>):</div><div class="line">      	<span class="keyword">for</span> image <span class="keyword">in</span> imgs:</div><div class="line">    		filename = wget.download(image)</div><div class="line">    		print(filename)</div></pre></td></tr></table></figure>
 <p>又一个问题是其中用到的wget插件不支持断点续传等操作，不过一般网络稳定时没问题。</p>
 ]]></content>
     
