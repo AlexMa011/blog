@@ -3,10 +3,9 @@
 
 
     
-    
   <url>
     <loc>https://alexma011.github.io/myblog.github.io/myblog.github.io/2017/06/12/pytorch1/</loc>
-    <lastmod>2017-06-12T08:46:15.000Z</lastmod>
+    <lastmod>2017-11-04T02:20:25.650Z</lastmod>
     <data>
         <display>
         <title>pytorch演练1:自制数据集的多标签训练</title>
@@ -18,9 +17,30 @@
          
          
            
+             
+              <breadCrumb title="深度学习" url="https://alexma011.github.io/myblog.github.io/myblog.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
         </display>
     </data>
     </url>
 
+    
+  <url>
+    <loc>https://alexma011.github.io/myblog.github.io/myblog.github.io/2017/10/08/%E4%B8%8B%E8%BD%BD%E7%BD%91%E9%A1%B5%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87/</loc>
+    <lastmod>2017-10-08T09:34:56.738Z</lastmod>
+    <data>
+        <display>
+        <title>下载网页中的图片</title>
+        <pubTime>2017-10-08T09:32:59.000Z</pubTime>
+        
+        <tag>python, html</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
 </urlset>
