@@ -5,7 +5,7 @@
   <link href="/myblog.github.io/atom.xml" rel="self"/>
   
   <link href="https://alexma011.github.io/myblog.github.io/"/>
-  <updated>2017-11-04T03:06:32.195Z</updated>
+  <updated>2017-11-04T03:38:42.676Z</updated>
   <id>https://alexma011.github.io/myblog.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>好用的手机应用</title>
+    <link href="https://alexma011.github.io/myblog.github.io/2017/11/04/%E5%A5%BD%E7%94%A8%E7%9A%84%E6%89%8B%E6%9C%BA%E5%BA%94%E7%94%A8/"/>
+    <id>https://alexma011.github.io/myblog.github.io/2017/11/04/好用的手机应用/</id>
+    <published>2017-11-04T03:22:50.000Z</published>
+    <updated>2017-11-04T03:38:42.676Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是一个介绍我觉得十分好用的一些iOS和Android应用的地方。</p>
+<ul>
+<li>Tydlig: 中文名叫有数，我认为最好用的计算器，有链接的功能，更重要的是可以在一片空白的区域写出计算的式子，就像打草稿是一样的，目前只在iOS平台上可以使用。Android上的替代品目前最靠近的叫ACalc。</li>
+<li>Wolfram Alpha：神器，不用多说，不仅仅是一个wiki一样的百科全书，最主要的是一些复杂的数学计算，当你像我一样老是忘记一些复杂的专业定义时，Wolfram Alpha是你最好的选择。iOS和Android上都有，需要分别付费。</li>
+<li>触宝输入法：TouchPal，和谷歌拼音是唯二支持中英文滑屏的输入法，并且有剪贴板的功能，缺点是广告太多，主题太丑。如果对中文滑屏输入没有要求，可以选择swiftkey。</li>
+<li>IFTTT：也是神器，可以集成很多服务，结合RSS订阅更加强大。我订阅的有筛选微博，提示温度，重要新闻，限免应用等一系列服务。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是一个介绍我觉得十分好用的一些iOS和Android应用的地方。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tydlig: 中文名叫有数，我认为最好用的计算器，有链接的功能，更重要的是可以在一片空白的区域写出计算的式子，就像打草稿是一样的，目前只在iOS平台上可以使用。Android上的
+    
+    </summary>
+    
+      <category term="小应用" scheme="https://alexma011.github.io/myblog.github.io/categories/%E5%B0%8F%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="ios, android" scheme="https://alexma011.github.io/myblog.github.io/tags/ios-android/"/>
+    
+  </entry>
   
   <entry>
     <title>下载网页中的图片</title>
