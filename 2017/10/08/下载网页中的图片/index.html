@@ -95,17 +95,17 @@
 
 
 
-<meta name="description" content="今天从wordpress搬运网站，发现wordpress里面的图片不提供批量下载，所以就自己写了个从html中直接xia z">
+<meta name="description" content="今天从wordpress搬运网站，发现wordpress里面的图片不提供批量下载，所以就自己写了个从html中直接下载一些图片的python小脚本： 12345678910111213import reimport wgetf = open(&apos;example.html&apos;)lines = f.readlines()p = re.compile(&apos;img.+?src=&quot;(http.+?)&quot;&apos;)for">
 <meta name="keywords" content="python, html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="下载网页中的图片">
 <meta property="og:url" content="https://alexma011.github.io/myblog.github.io/2017/10/08/下载网页中的图片/index.html">
 <meta property="og:site_name" content="小世界">
-<meta property="og:description" content="今天从wordpress搬运网站，发现wordpress里面的图片不提供批量下载，所以就自己写了个从html中直接xia z">
-<meta property="og:updated_time" content="2017-10-08T09:34:56.738Z">
+<meta property="og:description" content="今天从wordpress搬运网站，发现wordpress里面的图片不提供批量下载，所以就自己写了个从html中直接下载一些图片的python小脚本： 12345678910111213import reimport wgetf = open(&apos;example.html&apos;)lines = f.readlines()p = re.compile(&apos;img.+?src=&quot;(http.+?)&quot;&apos;)for">
+<meta property="og:updated_time" content="2017-11-04T03:03:42.256Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="下载网页中的图片">
-<meta name="twitter:description" content="今天从wordpress搬运网站，发现wordpress里面的图片不提供批量下载，所以就自己写了个从html中直接xia z">
+<meta name="twitter:description" content="今天从wordpress搬运网站，发现wordpress里面的图片不提供批量下载，所以就自己写了个从html中直接下载一些图片的python小脚本： 12345678910111213import reimport wgetf = open(&apos;example.html&apos;)lines = f.readlines()p = re.compile(&apos;img.+?src=&quot;(http.+?)&quot;&apos;)for">
 
 
 
@@ -308,6 +308,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myblog.github.io/categories/小应用/" itemprop="url" rel="index">
+                    <span itemprop="name">小应用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -343,7 +365,9 @@
       
 
       
-        <p>今天从wordpress搬运网站，发现wordpress里面的图片不提供批量下载，所以就自己写了个从html中直接xia z</p>
+        <p>今天从wordpress搬运网站，发现wordpress里面的图片不提供批量下载，所以就自己写了个从html中直接下载一些图片的python小脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> wget</div><div class="line"></div><div class="line">f = open(<span class="string">'example.html'</span>)</div><div class="line">lines = f.readlines()</div><div class="line">p = re.compile(<span class="string">'img.+?src="(http.+?)"'</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</div><div class="line">	imgs = p.findall(line)</div><div class="line">	<span class="keyword">if</span>(len(imgs)!=<span class="number">0</span>):</div><div class="line">      	<span class="keyword">for</span> image <span class="keyword">in</span> imgs:</div><div class="line">    		filename = wget.download(image)</div><div class="line">    print(imgs)</div></pre></td></tr></table></figure>
+<p>又一个问题是其中用到的wget插件不支持断点续传等操作，不过一般网络稳定时没问题。</p>
 
       
     </div>
@@ -475,7 +499,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/myblog.github.io/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
