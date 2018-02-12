@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>小世界</title>
   <subtitle>Alex Ma&#39;s Blog</subtitle>
-  <link href="/myblog.github.io/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="https://alexma011.github.io/myblog.github.io/"/>
+  <link href="https://alexma011.github.io/blog/"/>
   <updated>2017-11-04T04:48:57.018Z</updated>
-  <id>https://alexma011.github.io/myblog.github.io/</id>
+  <id>https://alexma011.github.io/blog/</id>
   
   <author>
     <name>Alex Ma</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>好用的手机应用</title>
-    <link href="https://alexma011.github.io/myblog.github.io/2017/11/04/%E5%A5%BD%E7%94%A8%E7%9A%84%E6%89%8B%E6%9C%BA%E5%BA%94%E7%94%A8/"/>
-    <id>https://alexma011.github.io/myblog.github.io/2017/11/04/好用的手机应用/</id>
+    <link href="https://alexma011.github.io/blog/2017/11/04/%E5%A5%BD%E7%94%A8%E7%9A%84%E6%89%8B%E6%9C%BA%E5%BA%94%E7%94%A8/"/>
+    <id>https://alexma011.github.io/blog/2017/11/04/好用的手机应用/</id>
     <published>2017-11-04T03:22:50.000Z</published>
     <updated>2017-11-04T04:48:57.018Z</updated>
     
@@ -39,19 +39,19 @@
     
     </summary>
     
-      <category term="小应用" scheme="https://alexma011.github.io/myblog.github.io/categories/%E5%B0%8F%E5%BA%94%E7%94%A8/"/>
+      <category term="小应用" scheme="https://alexma011.github.io/blog/categories/%E5%B0%8F%E5%BA%94%E7%94%A8/"/>
     
     
-      <category term="ios" scheme="https://alexma011.github.io/myblog.github.io/tags/ios/"/>
+      <category term="ios" scheme="https://alexma011.github.io/blog/tags/ios/"/>
     
-      <category term="android" scheme="https://alexma011.github.io/myblog.github.io/tags/android/"/>
+      <category term="android" scheme="https://alexma011.github.io/blog/tags/android/"/>
     
   </entry>
   
   <entry>
     <title>下载网页中的图片</title>
-    <link href="https://alexma011.github.io/myblog.github.io/2017/10/08/%E4%B8%8B%E8%BD%BD%E7%BD%91%E9%A1%B5%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87/"/>
-    <id>https://alexma011.github.io/myblog.github.io/2017/10/08/下载网页中的图片/</id>
+    <link href="https://alexma011.github.io/blog/2017/10/08/%E4%B8%8B%E8%BD%BD%E7%BD%91%E9%A1%B5%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87/"/>
+    <id>https://alexma011.github.io/blog/2017/10/08/下载网页中的图片/</id>
     <published>2017-10-08T09:32:59.000Z</published>
     <updated>2017-11-04T04:49:09.620Z</updated>
     
@@ -67,19 +67,19 @@
     
     </summary>
     
-      <category term="小应用" scheme="https://alexma011.github.io/myblog.github.io/categories/%E5%B0%8F%E5%BA%94%E7%94%A8/"/>
+      <category term="小应用" scheme="https://alexma011.github.io/blog/categories/%E5%B0%8F%E5%BA%94%E7%94%A8/"/>
     
     
-      <category term="python" scheme="https://alexma011.github.io/myblog.github.io/tags/python/"/>
+      <category term="python" scheme="https://alexma011.github.io/blog/tags/python/"/>
     
-      <category term="html" scheme="https://alexma011.github.io/myblog.github.io/tags/html/"/>
+      <category term="html" scheme="https://alexma011.github.io/blog/tags/html/"/>
     
   </entry>
   
   <entry>
     <title>pytorch演练1:自制数据集的多标签训练</title>
-    <link href="https://alexma011.github.io/myblog.github.io/2017/06/12/pytorch1/"/>
-    <id>https://alexma011.github.io/myblog.github.io/2017/06/12/pytorch1/</id>
+    <link href="https://alexma011.github.io/blog/2017/06/12/pytorch1/"/>
+    <id>https://alexma011.github.io/blog/2017/06/12/pytorch1/</id>
     <published>2017-06-12T08:38:01.000Z</published>
     <updated>2017-11-04T02:20:25.650Z</updated>
     
@@ -92,12 +92,12 @@
     
     </summary>
     
-      <category term="深度学习" scheme="https://alexma011.github.io/myblog.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+      <category term="深度学习" scheme="https://alexma011.github.io/blog/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="pytorch" scheme="https://alexma011.github.io/myblog.github.io/tags/pytorch/"/>
+      <category term="pytorch" scheme="https://alexma011.github.io/blog/tags/pytorch/"/>
     
-      <category term="deep learning" scheme="https://alexma011.github.io/myblog.github.io/tags/deep-learning/"/>
+      <category term="deep learning" scheme="https://alexma011.github.io/blog/tags/deep-learning/"/>
     
   </entry>
   
