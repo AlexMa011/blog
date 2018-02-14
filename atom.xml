@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://alexma011.github.io/blog/"/>
-  <updated>2018-02-14T03:09:18.865Z</updated>
+  <updated>2018-02-14T03:25:36.342Z</updated>
   <id>https://alexma011.github.io/blog/</id>
   
   <author>
@@ -20,27 +20,29 @@
     <link href="https://alexma011.github.io/blog/2018/02/14/%E5%A4%84%E7%90%86%E5%9B%BD%E5%AE%B6%E6%95%B0%E6%8D%AE/"/>
     <id>https://alexma011.github.io/blog/2018/02/14/处理国家数据/</id>
     <published>2018-02-14T02:32:40.000Z</published>
-    <updated>2018-02-14T03:09:18.865Z</updated>
+    <updated>2018-02-14T03:25:36.342Z</updated>
     
     <content type="html"><![CDATA[<p>Pandas在处理特征数据时（而不是图像文字这种raw data）时很有用，下面分享一个基于pandas和pygal的各个国家人均GDP可视化的python代码。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import pandas as pd</div><div class="line">from geonamescache import GeonamesCache</div><div class="line">from geonamescache.mappers import country</div><div class="line">from pygal.maps.world import World</div><div class="line">mapper = country(from_key=&apos;name&apos;, to_key=&apos;iso&apos;)</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">from</span> geonamescache <span class="keyword">import</span> GeonamesCache</div><div class="line"><span class="keyword">from</span> geonamescache.mappers <span class="keyword">import</span> country</div><div class="line"><span class="keyword">from</span> pygal.maps.world <span class="keyword">import</span> World</div><div class="line">mapper = country(from_key=<span class="string">'name'</span>, to_key=<span class="string">'iso'</span>)</div></pre></td></tr></table></figure>
 <p>mapper是一个将国家名映射到简称的函数，比如<code>&#39;ES&#39;=mapper(&#39;Spain&#39;)</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">pop = pd.read_csv(&apos;pop.csv&apos;,index_col=0)</div><div class="line">gdp = pd.read_csv(&apos;gdp.csv&apos;,index_col=0)</div><div class="line">pop_2016 = pop[[&apos;2016&apos;]]</div><div class="line">gdp_2016 = gdp[[&apos;2016&apos;]]</div><div class="line">pop_2016 = pop_2016.rename(columns=&#123;&apos;2016&apos;:&apos;pop_2016&apos;&#125;)</div><div class="line">gdp_2016 = gdp_2016.rename(columns=&#123;&apos;2016&apos;:&apos;gdp_2016&apos;&#125;)</div><div class="line">all_2016 = pd.concat([pop_2016,gdp_2016],axis=1).dropna(axis=0,how=&apos;any&apos;)</div></pre></td></tr></table></figure>
-<a href="/blog/2018/02/14/处理国家数据/pop.csv" title="pop.csv">pop.csv</a>和<a href="/blog/2018/02/14/处理国家数据/gdp.csv" title="gdp.csv">gdp.csv</a>分别是国家人口和人均GDP的数据，我们把这两个表合并成一个表，这和数据库的操作很类似，pandas最好的就是可以处理一下异常数据，空缺数据。<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">selected = all_2016.query(&apos;gdp_2016 &gt; 8000&apos; )</div><div class="line">selected_gdp = selected[[&apos;gdp_2016&apos;]]</div><div class="line">country_map = &#123;&#125;</div><div class="line">for country in selected_gdp.index:</div><div class="line">    try:</div><div class="line">        country_map[country] = mapper(country).lower()</div><div class="line">    except:</div><div class="line">        pass</div><div class="line">selected_gdp = selected_gdp.rename(index=country_map).to_dict()[&apos;gdp_2016&apos;]</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">pop = pd.read_csv(<span class="string">'pop.csv'</span>,index_col=<span class="number">0</span>)</div><div class="line">gdp = pd.read_csv(<span class="string">'gdp.csv'</span>,index_col=<span class="number">0</span>)</div><div class="line">pop_2016 = pop[[<span class="string">'2016'</span>]]</div><div class="line">gdp_2016 = gdp[[<span class="string">'2016'</span>]]</div><div class="line">pop_2016 = pop_2016.rename(columns=&#123;<span class="string">'2016'</span>:<span class="string">'pop_2016'</span>&#125;)</div><div class="line">gdp_2016 = gdp_2016.rename(columns=&#123;<span class="string">'2016'</span>:<span class="string">'gdp_2016'</span>&#125;)</div><div class="line">all_2016 = pd.concat([pop_2016,gdp_2016],axis=<span class="number">1</span>).dropna(axis=<span class="number">0</span>,how=<span class="string">'any'</span>)</div></pre></td></tr></table></figure>
+<a href="/blog/2018/02/14/处理国家数据/pop.csv" title="pop.csv">pop.csv</a>和<a href="/blog/2018/02/14/处理国家数据/gdp.csv" title="gdp.csv">gdp.csv</a>分别是国家人口和人均GDP的数据，我们把这两个表合并成一个表，这和数据库的操作很类似，pandas最好的就是可以处理一下异常数据，空缺数据。<br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">selected = all_2016.query(<span class="string">'gdp_2016 &gt; 8000'</span> )</div><div class="line">selected_gdp = selected[[<span class="string">'gdp_2016'</span>]]</div><div class="line">country_map = &#123;&#125;</div><div class="line"><span class="keyword">for</span> country <span class="keyword">in</span> selected_gdp.index:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        country_map[country] = mapper(country).lower()</div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        <span class="keyword">pass</span></div><div class="line">selected_gdp = selected_gdp.rename(index=country_map).to_dict()[<span class="string">'gdp_2016'</span>]</div></pre></td></tr></table></figure>
 <p>这一步是把人均GDP大于8000美金的国家挑选出来，最后一步就是可视化了，这里我们用比较简单粗糙的pygal提供的接口，更好的可以选择basemap。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">worldmap_chart = World()</div><div class="line">worldmap_chart.title = &apos;GDP per capita&apos;</div><div class="line">worldmap_chart.add(&apos;In 2016&apos;, selected_gdp)</div><div class="line">worldmap_chart.render_in_browser()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">worldmap_chart = World()</div><div class="line">worldmap_chart.title = <span class="string">'GDP per capita'</span></div><div class="line">worldmap_chart.add(<span class="string">'In 2016'</span>, selected_gdp)</div><div class="line">worldmap_chart.render_in_browser()</div></pre></td></tr></table></figure>
 <p>最后的效果图：<img src="/blog/2018/02/14/处理国家数据/re.svg" alt="re.svg" title=""></p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;Pandas在处理特征数据时（而不是图像文字这种raw data）时很有用，下面分享一个基于pandas和pygal的各个国家人均GDP可视化的python代码。&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td clas
     
     </summary>
     
     
-      <category term="Data" scheme="https://alexma011.github.io/blog/tags/Data/"/>
+      <category term="python" scheme="https://alexma011.github.io/blog/tags/python/"/>
+    
+      <category term="data" scheme="https://alexma011.github.io/blog/tags/data/"/>
     
   </entry>
   
@@ -49,7 +51,7 @@
     <link href="https://alexma011.github.io/blog/2017/11/04/%E5%A5%BD%E7%94%A8%E7%9A%84%E6%89%8B%E6%9C%BA%E5%BA%94%E7%94%A8/"/>
     <id>https://alexma011.github.io/blog/2017/11/04/好用的手机应用/</id>
     <published>2017-11-04T03:22:50.000Z</published>
-    <updated>2017-11-04T04:48:57.018Z</updated>
+    <updated>2018-02-14T03:16:42.218Z</updated>
     
     <content type="html"><![CDATA[<p>这是一个介绍我觉得十分好用的一些iOS和Android应用的地方。</p>
 <ul>
@@ -82,9 +84,10 @@
     <link href="https://alexma011.github.io/blog/2017/10/08/%E4%B8%8B%E8%BD%BD%E7%BD%91%E9%A1%B5%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87/"/>
     <id>https://alexma011.github.io/blog/2017/10/08/下载网页中的图片/</id>
     <published>2017-10-08T09:32:59.000Z</published>
-    <updated>2017-11-04T04:49:09.620Z</updated>
+    <updated>2018-02-14T03:18:07.580Z</updated>
     
     <content type="html"><![CDATA[<p>今天从wordpress搬运网站，发现wordpress里面的图片不提供批量下载，所以就自己写了个从html中直接下载一些图片的python小脚本：</p>
+<a id="more"></a>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> wget</div><div class="line"></div><div class="line">f = open(<span class="string">'example.html'</span>)</div><div class="line">lines = f.readlines()</div><div class="line">p = re.compile(<span class="string">'img.+?src="(http.+?)"'</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</div><div class="line">	imgs = p.findall(line)</div><div class="line">	<span class="keyword">if</span>(len(imgs)!=<span class="number">0</span>):</div><div class="line">      	<span class="keyword">for</span> image <span class="keyword">in</span> imgs:</div><div class="line">    		filename = wget.download(image)</div><div class="line">    		print(filename)</div></pre></td></tr></table></figure>
 <p>又一个问题是其中用到的wget插件不支持断点续传等操作，不过一般网络稳定时没问题。</p>
 ]]></content>
@@ -92,7 +95,6 @@
     <summary type="html">
     
       &lt;p&gt;今天从wordpress搬运网站，发现wordpress里面的图片不提供批量下载，所以就自己写了个从html中直接下载一些图片的python小脚本：&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gut
     
     </summary>
     
