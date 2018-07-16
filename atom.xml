@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>小世界</title>
+  
   <subtitle>Alex Ma&#39;s Blog</subtitle>
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://alexma011.github.io/blog/"/>
-  <updated>2018-02-14T03:25:36.342Z</updated>
+  <updated>2018-07-16T04:54:53.187Z</updated>
   <id>https://alexma011.github.io/blog/</id>
   
   <author>
@@ -16,22 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>终端使用socks5代理</title>
+    <link href="https://alexma011.github.io/blog/2018/07/16/%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8socks5%E4%BB%A3%E7%90%86/"/>
+    <id>https://alexma011.github.io/blog/2018/07/16/终端使用socks5代理/</id>
+    <published>2018-07-16T03:26:59.000Z</published>
+    <updated>2018-07-16T04:54:53.187Z</updated>
+    
+    <content type="html"><![CDATA[<ol><li><p>假设ss的端口是7070，设置sock5代理</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias proxy='export all_proxy=socks5://127.0.0.1:7070'</span><br><span class="line">alias unproxy='unset all_proxy'</span><br></pre></td></tr></table></figure></li><li><p>为GitHub设置代理</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy 'socks5://127.0.0.1:7070'</span><br><span class="line">git config --global https.proxy 'socks5://127.0.0.1:7070'</span><br></pre></td></tr></table></figure></li><li><p>pip需要安装pysocks</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pysocks</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;假设ss的端口是7070，设置sock5代理&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;sp
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>处理国家数据</title>
     <link href="https://alexma011.github.io/blog/2018/02/14/%E5%A4%84%E7%90%86%E5%9B%BD%E5%AE%B6%E6%95%B0%E6%8D%AE/"/>
     <id>https://alexma011.github.io/blog/2018/02/14/处理国家数据/</id>
     <published>2018-02-14T02:32:40.000Z</published>
     <updated>2018-02-14T03:25:36.342Z</updated>
     
-    <content type="html"><![CDATA[<p>Pandas在处理特征数据时（而不是图像文字这种raw data）时很有用，下面分享一个基于pandas和pygal的各个国家人均GDP可视化的python代码。</p>
-<a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">from</span> geonamescache <span class="keyword">import</span> GeonamesCache</div><div class="line"><span class="keyword">from</span> geonamescache.mappers <span class="keyword">import</span> country</div><div class="line"><span class="keyword">from</span> pygal.maps.world <span class="keyword">import</span> World</div><div class="line">mapper = country(from_key=<span class="string">'name'</span>, to_key=<span class="string">'iso'</span>)</div></pre></td></tr></table></figure>
-<p>mapper是一个将国家名映射到简称的函数，比如<code>&#39;ES&#39;=mapper(&#39;Spain&#39;)</code>。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">pop = pd.read_csv(<span class="string">'pop.csv'</span>,index_col=<span class="number">0</span>)</div><div class="line">gdp = pd.read_csv(<span class="string">'gdp.csv'</span>,index_col=<span class="number">0</span>)</div><div class="line">pop_2016 = pop[[<span class="string">'2016'</span>]]</div><div class="line">gdp_2016 = gdp[[<span class="string">'2016'</span>]]</div><div class="line">pop_2016 = pop_2016.rename(columns=&#123;<span class="string">'2016'</span>:<span class="string">'pop_2016'</span>&#125;)</div><div class="line">gdp_2016 = gdp_2016.rename(columns=&#123;<span class="string">'2016'</span>:<span class="string">'gdp_2016'</span>&#125;)</div><div class="line">all_2016 = pd.concat([pop_2016,gdp_2016],axis=<span class="number">1</span>).dropna(axis=<span class="number">0</span>,how=<span class="string">'any'</span>)</div></pre></td></tr></table></figure>
-<a href="/blog/2018/02/14/处理国家数据/pop.csv" title="pop.csv">pop.csv</a>和<a href="/blog/2018/02/14/处理国家数据/gdp.csv" title="gdp.csv">gdp.csv</a>分别是国家人口和人均GDP的数据，我们把这两个表合并成一个表，这和数据库的操作很类似，pandas最好的就是可以处理一下异常数据，空缺数据。<br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">selected = all_2016.query(<span class="string">'gdp_2016 &gt; 8000'</span> )</div><div class="line">selected_gdp = selected[[<span class="string">'gdp_2016'</span>]]</div><div class="line">country_map = &#123;&#125;</div><div class="line"><span class="keyword">for</span> country <span class="keyword">in</span> selected_gdp.index:</div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        country_map[country] = mapper(country).lower()</div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        <span class="keyword">pass</span></div><div class="line">selected_gdp = selected_gdp.rename(index=country_map).to_dict()[<span class="string">'gdp_2016'</span>]</div></pre></td></tr></table></figure>
-<p>这一步是把人均GDP大于8000美金的国家挑选出来，最后一步就是可视化了，这里我们用比较简单粗糙的pygal提供的接口，更好的可以选择basemap。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">worldmap_chart = World()</div><div class="line">worldmap_chart.title = <span class="string">'GDP per capita'</span></div><div class="line">worldmap_chart.add(<span class="string">'In 2016'</span>, selected_gdp)</div><div class="line">worldmap_chart.render_in_browser()</div></pre></td></tr></table></figure>
-<p>最后的效果图：<img src="/blog/2018/02/14/处理国家数据/re.svg" alt="re.svg" title=""></p>
-]]></content>
+    <content type="html"><![CDATA[<p>Pandas在处理特征数据时（而不是图像文字这种raw data）时很有用，下面分享一个基于pandas和pygal的各个国家人均GDP可视化的python代码。</p><a id="more"></a><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> geonamescache <span class="keyword">import</span> GeonamesCache</span><br><span class="line"><span class="keyword">from</span> geonamescache.mappers <span class="keyword">import</span> country</span><br><span class="line"><span class="keyword">from</span> pygal.maps.world <span class="keyword">import</span> World</span><br><span class="line">mapper = country(from_key=<span class="string">'name'</span>, to_key=<span class="string">'iso'</span>)</span><br></pre></td></tr></table></figure><p>mapper是一个将国家名映射到简称的函数，比如<code>&#39;ES&#39;=mapper(&#39;Spain&#39;)</code>。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pop = pd.read_csv(<span class="string">'pop.csv'</span>,index_col=<span class="number">0</span>)</span><br><span class="line">gdp = pd.read_csv(<span class="string">'gdp.csv'</span>,index_col=<span class="number">0</span>)</span><br><span class="line">pop_2016 = pop[[<span class="string">'2016'</span>]]</span><br><span class="line">gdp_2016 = gdp[[<span class="string">'2016'</span>]]</span><br><span class="line">pop_2016 = pop_2016.rename(columns=&#123;<span class="string">'2016'</span>:<span class="string">'pop_2016'</span>&#125;)</span><br><span class="line">gdp_2016 = gdp_2016.rename(columns=&#123;<span class="string">'2016'</span>:<span class="string">'gdp_2016'</span>&#125;)</span><br><span class="line">all_2016 = pd.concat([pop_2016,gdp_2016],axis=<span class="number">1</span>).dropna(axis=<span class="number">0</span>,how=<span class="string">'any'</span>)</span><br></pre></td></tr></table></figure><a href="/blog/2018/02/14/处理国家数据/pop.csv" title="pop.csv">pop.csv</a>和<a href="/blog/2018/02/14/处理国家数据/gdp.csv" title="gdp.csv">gdp.csv</a>分别是国家人口和人均GDP的数据，我们把这两个表合并成一个表，这和数据库的操作很类似，pandas最好的就是可以处理一下异常数据，空缺数据。<br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">selected = all_2016.query(<span class="string">'gdp_2016 &gt; 8000'</span> )</span><br><span class="line">selected_gdp = selected[[<span class="string">'gdp_2016'</span>]]</span><br><span class="line">country_map = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> country <span class="keyword">in</span> selected_gdp.index:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        country_map[country] = mapper(country).lower()</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">selected_gdp = selected_gdp.rename(index=country_map).to_dict()[<span class="string">'gdp_2016'</span>]</span><br></pre></td></tr></table></figure><p>这一步是把人均GDP大于8000美金的国家挑选出来，最后一步就是可视化了，这里我们用比较简单粗糙的pygal提供的接口，更好的可以选择basemap。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">worldmap_chart = World()</span><br><span class="line">worldmap_chart.title = <span class="string">'GDP per capita'</span></span><br><span class="line">worldmap_chart.add(<span class="string">'In 2016'</span>, selected_gdp)</span><br><span class="line">worldmap_chart.render_in_browser()</span><br></pre></td></tr></table></figure><p>最后的效果图：<img src="/blog/2018/02/14/处理国家数据/re.svg"></p>]]></content>
     
     <summary type="html">
     
@@ -53,20 +68,16 @@
     <published>2017-11-04T03:22:50.000Z</published>
     <updated>2018-02-14T03:16:42.218Z</updated>
     
-    <content type="html"><![CDATA[<p>这是一个介绍我觉得十分好用的一些iOS和Android应用的地方。</p>
-<ul>
-<li>Tydlig: 中文名叫有数，我认为最好用的计算器，有链接的功能，更重要的是可以在一片空白的区域写出计算的式子，就像打草稿是一样的，目前只在iOS平台上可以使用。Android上的替代品目前最靠近的叫ACalc。</li>
-<li>Wolfram Alpha：神器，不用多说，不仅仅是一个wiki一样的百科全书，最主要的是一些复杂的数学计算，当你像我一样老是忘记一些复杂的专业定义时，Wolfram Alpha是你最好的选择。iOS和Android上都有，需要分别付费。</li>
-<li>触宝输入法：TouchPal，和谷歌拼音是唯二支持中英文滑屏的输入法，并且有剪贴板的功能，缺点是广告太多，主题太丑。如果对中文滑屏输入没有要求，可以选择swiftkey。</li>
-<li>IFTTT：也是神器，可以集成很多服务，结合RSS订阅更加强大。我订阅的有筛选微博，提示温度，重要新闻，限免应用等一系列服务。</li>
-</ul>
-]]></content>
+    <content type="html"><![CDATA[<p>这是一个介绍我觉得十分好用的一些iOS和Android应用的地方。</p><ul><li>Tydlig: 中文名叫有数，我认为最好用的计算器，有链接的功能，更重要的是可以在一片空白的区域写出计算的式子，就像打草稿是一样的，目前只在iOS平台上可以使用。Android上的替代品目前最靠近的叫ACalc。</li><li>Wolfram Alpha：神器，不用多说，不仅仅是一个wiki一样的百科全书，最主要的是一些复杂的数学计算，当你像我一样老是忘记一些复杂的专业定义时，Wolfram Alpha是你最好的选择。iOS和Android上都有，需要分别付费。</li><li>触宝输入法：TouchPal，和谷歌拼音是唯二支持中英文滑屏的输入法，并且有剪贴板的功能，缺点是广告太多，主题太丑。如果对中文滑屏输入没有要求，可以选择swiftkey。</li><li>IFTTT：也是神器，可以集成很多服务，结合RSS订阅更加强大。我订阅的有筛选微博，提示温度，重要新闻，限免应用等一系列服务。</li></ul>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;这是一个介绍我觉得十分好用的一些iOS和Android应用的地方。&lt;/p&gt;
+      
+      
+        &lt;p&gt;这是一个介绍我觉得十分好用的一些iOS和Android应用的地方。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Tydlig: 中文名叫有数，我认为最好用的计算器，有链接的功能，更重要的是可以在一片空白的区域写出计算的式子，就像打草稿是一样的，目前只在iOS平台上可以使用。Android上的
+      
     
     </summary>
     
@@ -86,11 +97,7 @@
     <published>2017-10-08T09:32:59.000Z</published>
     <updated>2018-02-14T03:18:07.580Z</updated>
     
-    <content type="html"><![CDATA[<p>今天从wordpress搬运网站，发现wordpress里面的图片不提供批量下载，所以就自己写了个从html中直接下载一些图片的python小脚本：</p>
-<a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> re</div><div class="line"><span class="keyword">import</span> wget</div><div class="line"></div><div class="line">f = open(<span class="string">'example.html'</span>)</div><div class="line">lines = f.readlines()</div><div class="line">p = re.compile(<span class="string">'img.+?src="(http.+?)"'</span>)</div><div class="line"></div><div class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</div><div class="line">	imgs = p.findall(line)</div><div class="line">	<span class="keyword">if</span>(len(imgs)!=<span class="number">0</span>):</div><div class="line">      	<span class="keyword">for</span> image <span class="keyword">in</span> imgs:</div><div class="line">    		filename = wget.download(image)</div><div class="line">    		print(filename)</div></pre></td></tr></table></figure>
-<p>又一个问题是其中用到的wget插件不支持断点续传等操作，不过一般网络稳定时没问题。</p>
-]]></content>
+    <content type="html"><![CDATA[<p>今天从wordpress搬运网站，发现wordpress里面的图片不提供批量下载，所以就自己写了个从html中直接下载一些图片的python小脚本：</p><a id="more"></a><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> wget</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'example.html'</span>)</span><br><span class="line">lines = f.readlines()</span><br><span class="line">p = re.compile(<span class="string">'img.+?src="(http.+?)"'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> lines:</span><br><span class="line">imgs = p.findall(line)</span><br><span class="line"><span class="keyword">if</span>(len(imgs)!=<span class="number">0</span>):</span><br><span class="line">      <span class="keyword">for</span> image <span class="keyword">in</span> imgs:</span><br><span class="line">    filename = wget.download(image)</span><br><span class="line">    print(filename)</span><br></pre></td></tr></table></figure><p>又一个问题是其中用到的wget插件不支持断点续传等操作，不过一般网络稳定时没问题。</p>]]></content>
     
     <summary type="html">
     
@@ -114,12 +121,14 @@
     <published>2017-06-12T08:38:01.000Z</published>
     <updated>2017-11-04T02:20:25.650Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="制作自己的数据集"><a href="#制作自己的数据集" class="headerlink" title="制作自己的数据集"></a>制作自己的数据集</h4><p>pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹<code>/data</code>，然后在其下建立两个文件夹一个<code>/train</code>，一个<code>/val</code>。这两个文件夹中分别给每一类建立一个新的文件夹，例如<code>/train/cat</code>、<code>/train/dog</code>、<code>/val/cat</code>、<code>/val/dog</code>等等。然后利用pytorch的</p>
-]]></content>
+    <content type="html"><![CDATA[<h4 id="制作自己的数据集"><a href="#制作自己的数据集" class="headerlink" title="制作自己的数据集"></a>制作自己的数据集</h4><p>pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹<code>/data</code>，然后在其下建立两个文件夹一个<code>/train</code>，一个<code>/val</code>。这两个文件夹中分别给每一类建立一个新的文件夹，例如<code>/train/cat</code>、<code>/train/dog</code>、<code>/val/cat</code>、<code>/val/dog</code>等等。然后利用pytorch的</p>]]></content>
     
     <summary type="html">
     
-      &lt;h4 id=&quot;制作自己的数据集&quot;&gt;&lt;a href=&quot;#制作自己的数据集&quot; class=&quot;headerlink&quot; title=&quot;制作自己的数据集&quot;&gt;&lt;/a&gt;制作自己的数据集&lt;/h4&gt;&lt;p&gt;pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹&lt;code&gt;/dat
+      
+      
+        &lt;h4 id=&quot;制作自己的数据集&quot;&gt;&lt;a href=&quot;#制作自己的数据集&quot; class=&quot;headerlink&quot; title=&quot;制作自己的数据集&quot;&gt;&lt;/a&gt;制作自己的数据集&lt;/h4&gt;&lt;p&gt;pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹&lt;code&gt;/dat
+      
     
     </summary>
     
