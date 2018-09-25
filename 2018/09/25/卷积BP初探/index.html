@@ -16,7 +16,7 @@
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
@@ -112,18 +112,18 @@
 
 
 
-  <meta name="description" content="卷积BP初探再看BP假设A, B, C都是矩阵且 A=BC, 这里是矩阵乘法，那么有$a_{ij} = \sum_k b_{ik} c_{kj}$ ，若有一标量函数 f(A)，记$(\frac{df}{dA}){ij}  =  \frac{df}{da{ij}}$。 若要求$\frac{df}{dB}$，则有 $$(\frac{df}{dB}){ik} = \frac{df}{db{ik}} =">
+  <meta name="description" content="卷积BP初探 再看BP 假设A, B, C都是矩阵且 A=BC, 这里是矩阵乘法，那么有\(a_{ij} = \sum_k b_{ik} c_{kj}\) ，若有一标量函数 f(A)，记\((\frac{df}{dA})_{ij} = \frac{df}{da_{ij}}\)。 若要求\(\frac{df}{dB}\)，则有 \[(\frac{df}{dB})_{ik} = \frac{df}{d">
 <meta name="keywords" content="deep learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="卷积BP初探">
 <meta property="og:url" content="https://alexma011.github.io/blog/2018/09/25/卷积BP初探/index.html">
 <meta property="og:site_name" content="小世界">
-<meta property="og:description" content="卷积BP初探再看BP假设A, B, C都是矩阵且 A=BC, 这里是矩阵乘法，那么有$a_{ij} = \sum_k b_{ik} c_{kj}$ ，若有一标量函数 f(A)，记$(\frac{df}{dA}){ij}  =  \frac{df}{da{ij}}$。 若要求$\frac{df}{dB}$，则有 $$(\frac{df}{dB}){ik} = \frac{df}{db{ik}} =">
+<meta property="og:description" content="卷积BP初探 再看BP 假设A, B, C都是矩阵且 A=BC, 这里是矩阵乘法，那么有\(a_{ij} = \sum_k b_{ik} c_{kj}\) ，若有一标量函数 f(A)，记\((\frac{df}{dA})_{ij} = \frac{df}{da_{ij}}\)。 若要求\(\frac{df}{dB}\)，则有 \[(\frac{df}{dB})_{ik} = \frac{df}{d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-25T12:03:50.999Z">
+<meta property="og:updated_time" content="2018-09-25T13:09:17.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卷积BP初探">
-<meta name="twitter:description" content="卷积BP初探再看BP假设A, B, C都是矩阵且 A=BC, 这里是矩阵乘法，那么有$a_{ij} = \sum_k b_{ik} c_{kj}$ ，若有一标量函数 f(A)，记$(\frac{df}{dA}){ij}  =  \frac{df}{da{ij}}$。 若要求$\frac{df}{dB}$，则有 $$(\frac{df}{dB}){ik} = \frac{df}{db{ik}} =">
+<meta name="twitter:description" content="卷积BP初探 再看BP 假设A, B, C都是矩阵且 A=BC, 这里是矩阵乘法，那么有\(a_{ij} = \sum_k b_{ik} c_{kj}\) ，若有一标量函数 f(A)，记\((\frac{df}{dA})_{ij} = \frac{df}{da_{ij}}\)。 若要求\(\frac{df}{dB}\)，则有 \[(\frac{df}{dB})_{ik} = \frac{df}{d">
 
 
 
@@ -178,7 +178,7 @@
       .logo-line-after i { right: initial; }
     }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
@@ -189,7 +189,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -349,7 +349,7 @@
                 
               
 
-              <time title="Created: 2018-09-25 20:01:11 / Modified: 20:03:50" itemprop="dateCreated datePublished" datetime="2018-09-25T20:01:11+08:00">2018-09-25</time>
+              <time title="Created: 2018-09-25 20:01:11 / Modified: 21:09:17" itemprop="dateCreated datePublished" datetime="2018-09-25T20:01:11+08:00">2018-09-25</time>
             
 
             
@@ -387,19 +387,23 @@
       
 
       
-        <h4 id="卷积BP初探"><a href="#卷积BP初探" class="headerlink" title="卷积BP初探"></a>卷积BP初探</h4><h5 id="再看BP"><a href="#再看BP" class="headerlink" title="再看BP"></a>再看BP</h5><p>假设A, B, C都是矩阵且 A=BC, 这里是矩阵乘法，那么有$a_{ij} = \sum_k b_{ik} c_{kj}$ ，若有一标量函数 f(A)，记$(\frac{df}{dA})<em>{ij}  =  \frac{df}{da</em>{ij}}$。</p>
-<p>若要求$\frac{df}{dB}$，则有</p>
-<p>$$(\frac{df}{dB})<em>{ik} = \frac{df}{db</em>{ik}} = \sum_j\frac{df}{da_{ij}}\frac{da_{ij}}{db_{ik}} = \sum_j\frac{df}{da_{ij}} c_{kj} = \sum_j\frac{df}{da_{ij}}  c’_{jk} $$</p>
-<p>其中 $c_{kj}=c’_{jk}$，可以知道C‘矩阵是C矩阵的转置，所以有$\frac{df}{dB}=\frac{df}{dA}C^T$，类似地，有$\frac{df}{dC}=B^T\frac{df}{dA}$。</p>
-<h5 id="卷积与反卷积"><a href="#卷积与反卷积" class="headerlink" title="卷积与反卷积"></a>卷积与反卷积</h5><p>这里推荐一个<a href="https://github.com/vdumoulin/conv_arithmetic" target="_blank" rel="noopener">卷积和反卷积的图示</a>，里面可以直观的看到什么是卷积，什么是反卷积，结合图示，我们希望写出卷积和反卷积的数学表达。</p>
+        <h4 id="卷积bp初探">卷积BP初探</h4>
+<h5 id="再看bp">再看BP</h5>
+<p>假设A, B, C都是矩阵且 A=BC, 这里是矩阵乘法，那么有<span class="math inline">\(a_{ij} = \sum_k b_{ik} c_{kj}\)</span> ，若有一标量函数 f(A)，记<span class="math inline">\((\frac{df}{dA})_{ij} = \frac{df}{da_{ij}}\)</span>。</p>
+<p>若要求<span class="math inline">\(\frac{df}{dB}\)</span>，则有</p>
+<p><span class="math display">\[(\frac{df}{dB})_{ik} = \frac{df}{db_{ik}} = \sum_j\frac{df}{da_{ij}}\frac{da_{ij}}{db_{ik}} = \sum_j\frac{df}{da_{ij}} c_{kj} = \sum_j\frac{df}{da_{ij}}  c&#39;_{jk} \]</span></p>
+<p>其中 <span class="math inline">\(c_{kj}=c&#39;_{jk}\)</span>，可以知道C‘矩阵是C矩阵的转置，所以有<span class="math inline">\(\frac{df}{dB}=\frac{df}{dA}C^T\)</span>，类似地，有<span class="math inline">\(\frac{df}{dC}=B^T\frac{df}{dA}\)</span>。</p>
+<h5 id="卷积与反卷积">卷积与反卷积</h5>
+<p>这里推荐一个<a href="https://github.com/vdumoulin/conv_arithmetic" target="_blank" rel="noopener">卷积和反卷积的图示</a>，里面可以直观的看到什么是卷积，什么是反卷积，结合图示，我们希望写出卷积和反卷积的数学表达。</p>
 <p>卷积：输入是X，卷积核是W，卷积核的高和宽分别是h和w，输出是Y，stride是s，padding是p，则有</p>
-<p>$$y_{ij} = \sum_{a,b}w_{ab}x_{i<em>s-p+a,j</em>s-p+b}$$</p>
+<p><span class="math display">\[y_{ij} = \sum_{a,b}w_{ab}x_{i*s-p+a,j*s-p+b}\]</span></p>
 <p>如果x的下标不存在的话，则取其值为0。</p>
 <p>反卷积：输入是X，卷积核是W，卷积核的高和宽分别是h和w，输出是Y，stride是s，padding是p，则有</p>
-<p>$$y_{ij}=\sum_{a,b}w_{ab}x_{\frac{1}{s}[i-(w-1)+a],\frac{1}{s}[j-(h-1)+b]}$$</p>
+<p><span class="math display">\[y_{ij}=\sum_{a,b}w_{ab}x_{\frac{1}{s}[i-(w-1)+a],\frac{1}{s}[j-(h-1)+b]}\]</span></p>
 <p>同样的，如果x的下标不存在的话，则取其值为0。</p>
-<h5 id="卷积的BP"><a href="#卷积的BP" class="headerlink" title="卷积的BP"></a>卷积的BP</h5><p>对上述的卷积，我们引入一个对称的卷积核W’，满足$w’<em>{w-1-a,h-1-b}=w</em>{a,b}$我们有</p>
-<p>$$\frac{dl}{dx_{ij}} = \sum_{a,b}w_{a,b}\frac{dl}{dy_{\frac{1}{s}[i-a+p],\frac{1}{s}[j-b+p]}} =\sum_{a,b}w’<em>{a,b}\frac{dl}{dy</em>{\frac{1}{s}[i+p-(w-1)+a],\frac{1}{s}[j+p-(h-1)+b]}} $$</p>
+<h5 id="卷积的bp">卷积的BP</h5>
+<p>对上述的卷积，我们引入一个对称的卷积核W'，满足<span class="math inline">\(w&#39;_{w-1-a,h-1-b}=w_{a,b}\)</span>我们有</p>
+<p><span class="math display">\[\frac{dl}{dx_{ij}} = \sum_{a,b}w_{a,b}\frac{dl}{dy_{\frac{1}{s}[i-a+p],\frac{1}{s}[j-b+p]}} =\sum_{a,b}w&#39;_{a,b}\frac{dl}{dy_{\frac{1}{s}[i+p-(w-1)+a],\frac{1}{s}[j+p-(h-1)+b]}} \]</span></p>
 <p>对比之前的反卷积公式，可以看出卷积的BP是个反卷积的过程。</p>
 
       
@@ -623,7 +627,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#卷积BP初探"><span class="nav-number">1.</span> <span class="nav-text">卷积BP初探</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#再看BP"><span class="nav-number">1.1.</span> <span class="nav-text">再看BP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#卷积与反卷积"><span class="nav-number">1.2.</span> <span class="nav-text">卷积与反卷积</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#卷积的BP"><span class="nav-number">1.3.</span> <span class="nav-text">卷积的BP</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#卷积bp初探"><span class="nav-number">1.</span> <span class="nav-text">卷积BP初探</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#再看bp"><span class="nav-number">1.1.</span> <span class="nav-text">再看BP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#卷积与反卷积"><span class="nav-number">1.2.</span> <span class="nav-text">卷积与反卷积</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#卷积的bp"><span class="nav-number">1.3.</span> <span class="nav-text">卷积的BP</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -814,6 +818,47 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+    
   
 
 

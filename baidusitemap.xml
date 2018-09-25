@@ -1,143 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
-    
-  <url>
-    <loc>https://alexma011.github.io/blog/blog/2018/07/16/%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8socks5%E4%BB%A3%E7%90%86/</loc>
-    <lastmod>2018-09-25T12:05:41.754Z</lastmod>
-    <data>
-        <display>
-        <title>终端使用socks5代理</title>
-        <pubTime>2018-07-16T03:26:59.000Z</pubTime>
-        
-        <tag>proxy</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>https://alexma011.github.io/blog/blog/2018/09/25/%E5%8D%B7%E7%A7%AFBP%E5%88%9D%E6%8E%A2/</loc>
-    <lastmod>2018-09-25T12:03:50.999Z</lastmod>
-    <data>
-        <display>
-        <title>卷积BP初探</title>
-        <pubTime>2018-09-25T12:01:11.000Z</pubTime>
-        
-        <tag>deep learning</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-09-25T13:09:17.336Z</lastmod>
+  </url>  <url>
+    <loc>https://alexma011.github.io/blog/blog/2018/07/16/%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8socks5%E4%BB%A3%E7%90%86/</loc>
+    <lastmod>2018-09-25T12:05:41.754Z</lastmod>
+  </url>  <url>
     <loc>https://alexma011.github.io/blog/blog/2018/07/16/PyInstaller%E6%88%96PyQt%E7%9A%84%E5%9D%91/</loc>
     <lastmod>2018-07-16T05:33:24.590Z</lastmod>
-    <data>
-        <display>
-        <title>PyInstaller或PyQt的坑</title>
-        <pubTime>2018-07-16T05:09:23.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://alexma011.github.io/blog/blog/2017/06/12/pytorch1/</loc>
     <lastmod>2018-07-16T05:31:14.027Z</lastmod>
-    <data>
-        <display>
-        <title>pytorch演练1:自制数据集的多标签训练</title>
-        <pubTime>2017-06-12T08:38:01.000Z</pubTime>
-        
-        <tag>pytorch</tag>
-         
-        <tag>deep learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="深度学习" url="https://alexma011.github.io/blog/blog/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://alexma011.github.io/blog/blog/2018/02/14/%E5%A4%84%E7%90%86%E5%9B%BD%E5%AE%B6%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2018-02-14T03:25:36.342Z</lastmod>
-    <data>
-        <display>
-        <title>处理国家数据</title>
-        <pubTime>2018-02-14T02:32:40.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>data</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://alexma011.github.io/blog/blog/2017/10/08/%E4%B8%8B%E8%BD%BD%E7%BD%91%E9%A1%B5%E4%B8%AD%E7%9A%84%E5%9B%BE%E7%89%87/</loc>
     <lastmod>2018-02-14T03:18:07.580Z</lastmod>
-    <data>
-        <display>
-        <title>下载网页中的图片</title>
-        <pubTime>2017-10-08T09:32:59.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>html</tag>
-         
-         
-           
-             
-              <breadCrumb title="小应用" url="https://alexma011.github.io/blog/blog/categories/%E5%B0%8F%E5%BA%94%E7%94%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+  </url>  <url>
     <loc>https://alexma011.github.io/blog/blog/2017/11/04/%E5%A5%BD%E7%94%A8%E7%9A%84%E6%89%8B%E6%9C%BA%E5%BA%94%E7%94%A8/</loc>
     <lastmod>2018-02-14T03:16:42.218Z</lastmod>
-    <data>
-        <display>
-        <title>好用的手机应用</title>
-        <pubTime>2017-11-04T03:22:50.000Z</pubTime>
-        
-        <tag>ios</tag>
-         
-        <tag>android</tag>
-         
-         
-           
-             
-              <breadCrumb title="小应用" url="https://alexma011.github.io/blog/blog/categories/%E5%B0%8F%E5%BA%94%E7%94%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
+  </url>
 </urlset>

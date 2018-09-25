@@ -16,7 +16,7 @@
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
@@ -112,18 +112,18 @@
 
 
 
-  <meta name="description" content="假设ss的端口是7070，设置sock5代理 12alias proxy=&apos;export all_proxy=socks5://127.0.0.1:7070&apos;alias unproxy=&apos;unset all_proxy&apos;  为GitHub设置代理 12git config --global http.proxy &apos;socks5://127.0.0.1:7070&apos;git config --glob">
+  <meta name="description" content="假设ss的端口是7070，设置sock5代理 12alias proxy=&apos;export all_proxy=socks5://127.0.0.1:7070&apos;alias unproxy=&apos;unset all_proxy&apos; 为GitHub设置代理 12git config --global http.proxy &apos;socks5://127.0.0.1:7070&apos;git config --globa">
 <meta name="keywords" content="proxy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="终端使用socks5代理">
 <meta property="og:url" content="https://alexma011.github.io/blog/2018/07/16/终端使用socks5代理/index.html">
 <meta property="og:site_name" content="小世界">
-<meta property="og:description" content="假设ss的端口是7070，设置sock5代理 12alias proxy=&apos;export all_proxy=socks5://127.0.0.1:7070&apos;alias unproxy=&apos;unset all_proxy&apos;  为GitHub设置代理 12git config --global http.proxy &apos;socks5://127.0.0.1:7070&apos;git config --glob">
+<meta property="og:description" content="假设ss的端口是7070，设置sock5代理 12alias proxy=&apos;export all_proxy=socks5://127.0.0.1:7070&apos;alias unproxy=&apos;unset all_proxy&apos; 为GitHub设置代理 12git config --global http.proxy &apos;socks5://127.0.0.1:7070&apos;git config --globa">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-09-25T12:05:41.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="终端使用socks5代理">
-<meta name="twitter:description" content="假设ss的端口是7070，设置sock5代理 12alias proxy=&apos;export all_proxy=socks5://127.0.0.1:7070&apos;alias unproxy=&apos;unset all_proxy&apos;  为GitHub设置代理 12git config --global http.proxy &apos;socks5://127.0.0.1:7070&apos;git config --glob">
+<meta name="twitter:description" content="假设ss的端口是7070，设置sock5代理 12alias proxy=&apos;export all_proxy=socks5://127.0.0.1:7070&apos;alias unproxy=&apos;unset all_proxy&apos; 为GitHub设置代理 12git config --global http.proxy &apos;socks5://127.0.0.1:7070&apos;git config --globa">
 
 
 
@@ -178,7 +178,7 @@
       .logo-line-after i { right: initial; }
     }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
@@ -189,7 +189,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -399,16 +399,10 @@
       
 
       
-        <ol>
-<li><p>假设ss的端口是7070，设置sock5代理</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias proxy='export all_proxy=socks5://127.0.0.1:7070'</span><br><span class="line">alias unproxy='unset all_proxy'</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>为GitHub设置代理</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy 'socks5://127.0.0.1:7070'</span><br><span class="line">git config --global https.proxy 'socks5://127.0.0.1:7070'</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>pip需要安装pysocks</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pysocks</span><br></pre></td></tr></table></figure>
-</li>
+        <ol type="1">
+<li><p>假设ss的端口是7070，设置sock5代理 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alias proxy='export all_proxy=socks5://127.0.0.1:7070'</span><br><span class="line">alias unproxy='unset all_proxy'</span><br></pre></td></tr></table></figure></p></li>
+<li><p>为GitHub设置代理 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy 'socks5://127.0.0.1:7070'</span><br><span class="line">git config --global https.proxy 'socks5://127.0.0.1:7070'</span><br></pre></td></tr></table></figure></p></li>
+<li><p>pip需要安装pysocks <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pysocks</span><br></pre></td></tr></table></figure></p></li>
 </ol>
 
       
@@ -759,7 +753,24 @@
   
 
 
-  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.3.0"></script>
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.3.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 

@@ -16,7 +16,7 @@
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
@@ -112,18 +112,18 @@
 
 
 
-  <meta name="description" content="制作自己的数据集pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹/data，然后在其下建立两个文件夹一个/train，一个/val。这两个文件夹中分别给每一类建立一个新的文件夹，例如/train/cat、/train/dog、/val/cat、/val/dog等等。然后利用pytorch的">
+  <meta name="description" content="制作自己的数据集 pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹/data，然后在其下建立两个文件夹一个/train，一个/val。这两个文件夹中分别给每一类建立一个新的文件夹，例如/train/cat、/train/dog、/val/cat、/val/dog等等。然后利用pytorch的">
 <meta name="keywords" content="pytorch,deep learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pytorch演练1:自制数据集的多标签训练">
 <meta property="og:url" content="https://alexma011.github.io/blog/2017/06/12/pytorch1/index.html">
 <meta property="og:site_name" content="小世界">
-<meta property="og:description" content="制作自己的数据集pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹/data，然后在其下建立两个文件夹一个/train，一个/val。这两个文件夹中分别给每一类建立一个新的文件夹，例如/train/cat、/train/dog、/val/cat、/val/dog等等。然后利用pytorch的">
+<meta property="og:description" content="制作自己的数据集 pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹/data，然后在其下建立两个文件夹一个/train，一个/val。这两个文件夹中分别给每一类建立一个新的文件夹，例如/train/cat、/train/dog、/val/cat、/val/dog等等。然后利用pytorch的">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-07-16T05:31:14.027Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pytorch演练1:自制数据集的多标签训练">
-<meta name="twitter:description" content="制作自己的数据集pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹/data，然后在其下建立两个文件夹一个/train，一个/val。这两个文件夹中分别给每一类建立一个新的文件夹，例如/train/cat、/train/dog、/val/cat、/val/dog等等。然后利用pytorch的">
+<meta name="twitter:description" content="制作自己的数据集 pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹/data，然后在其下建立两个文件夹一个/train，一个/val。这两个文件夹中分别给每一类建立一个新的文件夹，例如/train/cat、/train/dog、/val/cat、/val/dog等等。然后利用pytorch的">
 
 
 
@@ -178,7 +178,7 @@
       .logo-line-after i { right: initial; }
     }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
@@ -189,7 +189,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -417,7 +417,8 @@
       
 
       
-        <h4 id="制作自己的数据集"><a href="#制作自己的数据集" class="headerlink" title="制作自己的数据集"></a>制作自己的数据集</h4><p>pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹<code>/data</code>，然后在其下建立两个文件夹一个<code>/train</code>，一个<code>/val</code>。这两个文件夹中分别给每一类建立一个新的文件夹，例如<code>/train/cat</code>、<code>/train/dog</code>、<code>/val/cat</code>、<code>/val/dog</code>等等。然后利用pytorch的</p>
+        <h4 id="制作自己的数据集">制作自己的数据集</h4>
+<p>pytorch有很多自制数据集的方法，最简单的方法是新建一个数据集文件夹<code>/data</code>，然后在其下建立两个文件夹一个<code>/train</code>，一个<code>/val</code>。这两个文件夹中分别给每一类建立一个新的文件夹，例如<code>/train/cat</code>、<code>/train/dog</code>、<code>/val/cat</code>、<code>/val/dog</code>等等。然后利用pytorch的</p>
 
       
     </div>
@@ -790,7 +791,24 @@
   
 
 
-  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.3.0"></script>
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=6.3.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
 
 
