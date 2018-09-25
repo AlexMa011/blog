@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>https://alexma011.github.io/blog/blog/2018/09/25/%E5%8D%B7%E7%A7%AFBP%E5%88%9D%E6%8E%A2/</loc>
+    <lastmod>2018-09-25T12:02:49.623Z</lastmod>
+    <data>
+        <display>
+        <title>卷积BP初探</title>
+        <pubTime>2018-09-25T12:01:11.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>deep learning</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://alexma011.github.io/blog/blog/2018/07/16/PyInstaller%E6%88%96PyQt%E7%9A%84%E5%9D%91/</loc>
     <lastmod>2018-07-16T05:33:24.590Z</lastmod>
     <data>
@@ -15,6 +34,28 @@
          
          
            
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alexma011.github.io/blog/blog/2017/06/12/pytorch1/</loc>
+    <lastmod>2018-07-16T05:31:14.027Z</lastmod>
+    <data>
+        <display>
+        <title>pytorch演练1:自制数据集的多标签训练</title>
+        <pubTime>2017-06-12T08:38:01.000Z</pubTime>
+        
+        <tag>pytorch</tag>
+         
+        <tag>deep learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="深度学习" url="https://alexma011.github.io/blog/blog/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+          
         </display>
     </data>
     </url>
@@ -92,28 +133,6 @@
            
              
               <breadCrumb title="小应用" url="https://alexma011.github.io/blog/blog/categories/%E5%B0%8F%E5%BA%94%E7%94%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://alexma011.github.io/blog/blog/2017/06/12/pytorch1/</loc>
-    <lastmod>2017-11-04T02:20:25.650Z</lastmod>
-    <data>
-        <display>
-        <title>pytorch演练1:自制数据集的多标签训练</title>
-        <pubTime>2017-06-12T08:38:01.000Z</pubTime>
-        
-        <tag>pytorch</tag>
-         
-        <tag>deep learning</tag>
-         
-         
-           
-             
-              <breadCrumb title="深度学习" url="https://alexma011.github.io/blog/blog/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
           
         </display>
     </data>

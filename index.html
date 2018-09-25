@@ -299,6 +299,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://alexma011.github.io/blog/blog/2018/09/25/卷积BP初探/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Ma">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小世界">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/blog/2018/09/25/卷积BP初探/" itemprop="url">
+                  卷积BP初探
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-25 20:01:11 / Modified: 20:02:49" itemprop="dateCreated datePublished" datetime="2018-09-25T20:01:11+08:00">2018-09-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="卷积BP初探"><a href="#卷积BP初探" class="headerlink" title="卷积BP初探"></a>卷积BP初探</h4><h5 id="再看BP"><a href="#再看BP" class="headerlink" title="再看BP"></a>再看BP</h5><p>假设A, B, C都是矩阵且 A=BC, 这里是矩阵乘法，那么有$a_{ij} = \sum_k b_{ik} c_{kj}$ ，若有一标量函数 f(A)，记$(\frac{df}{dA})<em>{ij}  =  \frac{df}{da</em>{ij}}$。</p>
+<p>若要求$\frac{df}{dB}$，则有</p>
+<p>$$(\frac{df}{dB})<em>{ik} = \frac{df}{db</em>{ik}} = \sum_j\frac{df}{da_{ij}}\frac{da_{ij}}{db_{ik}} = \sum_j\frac{df}{da_{ij}} c_{kj} = \sum_j\frac{df}{da_{ij}}  c’_{jk} $$</p>
+<p>其中 $c_{kj}=c’_{jk}$，可以知道C‘矩阵是C矩阵的转置，所以有$\frac{df}{dB}=\frac{df}{dA}C^T$，类似地，有$\frac{df}{dC}=B^T\frac{df}{dA}$。</p>
+<h5 id="卷积与反卷积"><a href="#卷积与反卷积" class="headerlink" title="卷积与反卷积"></a>卷积与反卷积</h5><p>这里推荐一个<a href="https://github.com/vdumoulin/conv_arithmetic" target="_blank" rel="noopener">卷积和反卷积的图示</a>，里面可以直观的看到什么是卷积，什么是反卷积，结合图示，我们希望写出卷积和反卷积的数学表达。</p>
+<p>卷积：输入是X，卷积核是W，卷积核的高和宽分别是h和w，输出是Y，stride是s，padding是p，则有</p>
+<p>$$y_{ij} = \sum_{a,b}w_{ab}x_{i<em>s-p+a,j</em>s-p+b}$$</p>
+<p>如果x的下标不存在的话，则取其值为0。</p>
+<p>反卷积：输入是X，卷积核是W，卷积核的高和宽分别是h和w，输出是Y，stride是s，padding是p，则有</p>
+<p>$$y_{ij}=\sum_{a,b}w_{ab}x_{\frac{1}{s}[i-(w-1)+a],\frac{1}{s}[j-(h-1)+b]}$$</p>
+<p>同样的，如果x的下标不存在的话，则取其值为0。</p>
+<h5 id="卷积的BP"><a href="#卷积的BP" class="headerlink" title="卷积的BP"></a>卷积的BP</h5><p>对上述的卷积，我们引入一个对称的卷积核W’，满足$w’<em>{w-1-a,h-1-b}=w</em>{a,b}$我们有</p>
+<p>$$\frac{dl}{dx_{ij}} = \sum_{a,b}w_{a,b}\frac{dl}{dy_{\frac{1}{s}[i-a+p],\frac{1}{s}[j-b+p]}} =\sum_{a,b}w’<em>{a,b}\frac{dl}{dy</em>{\frac{1}{s}[i+p-(w-1)+a],\frac{1}{s}[j+p-(h-1)+b]}} $$</p>
+<p>对比之前的反卷积公式，可以看出卷积的BP是个反卷积的过程。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://alexma011.github.io/blog/blog/2018/07/16/PyInstaller或PyQt的坑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1162,7 +1315,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2017-11-04 10:20:25" itemprop="dateModified" datetime="2017-11-04T10:20:25+08:00">2017-11-04</time>
+                <time title="Modified: 2018-07-16 13:31:14" itemprop="dateModified" datetime="2018-07-16T13:31:14+08:00">2018-07-16</time>
               
             
           </span>
@@ -1301,7 +1454,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
